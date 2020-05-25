@@ -1,4 +1,6 @@
+/* eslint-disable no-useless-escape */
 const path = require('path')
+const webpack = require('webpack')
 
 module.exports = {
   mode: 'production',
@@ -22,7 +24,10 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, './public'),
-    filename: 'bundle.production.js',
+    filename: 'bundle.js',
     publicPath: '/',
   },
+  plugins: [
+    new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /cst/),
+  ],
 }

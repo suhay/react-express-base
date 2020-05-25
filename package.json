@@ -1,5 +1,5 @@
 {
-  "name": "react-express-base",
+  "name": "@suhay/react-express-base",
   "version": "1.0.0",
   "main": "src/index.js",
   "repository": "git@github.com:suhay/react-express-base.git",
@@ -31,6 +31,7 @@
   },
   "scripts": {
     "dev": "NODE_ENV=development nodemon --watch src src/index.js",
+    "debug": "NODE_ENV=development nodemon --inspect --watch src src/index.js",
     "build": "webpack --config webpack.prod.js",
     "start": "pm2 start src/index.js --name 'react-express-base'",
     "deploy-production": "pm2 deploy ecosystem.config.js production --force",
@@ -41,5 +42,6 @@
       "@babel/preset-env",
       "@babel/preset-react"
     ]
-  }
+  },
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" }
 }

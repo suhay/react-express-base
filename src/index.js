@@ -1,5 +1,4 @@
 const express = require('express')
-const http = require('http')
 const path = require('path')
 
 const app = express()
@@ -26,8 +25,6 @@ app.get('*', (req, res) => {
   res.sendFile(path.resolve('./public/index.html'))
 })
 
-const server = http.createServer(app)
-
-server.listen(process.env.PORT || 3000, () => {
-  console.log('Listening on %j', server.address())
+app.listen({ port: process.env.PORT || 4000 }, async () => {
+  console.log(`🚀 Server ready at http://localhost:${process.env.PORT || 4000}`)
 })

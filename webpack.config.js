@@ -18,10 +18,15 @@ module.exports = {
         exclude: /node_modules/,
         use: ['babel-loader'],
       },
+      {
+        test: /\.mjs$/,
+        include: /node_modules/,
+        type: 'javascript/auto',
+      },
     ],
   },
   resolve: {
-    extensions: ['*', '.js'],
+    extensions: ['*', '.js', '.mjs'],
   },
   output: {
     path: path.resolve(__dirname, './public'),
