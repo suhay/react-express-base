@@ -15,13 +15,21 @@ module.exports = {
   }],
 
   deploy: {
+    development: {
+      user: '',
+      host: '',
+      ref: 'origin/master',
+      repo: 'git@github.com:',
+      path: '/',
+      'post-deploy': 'yarn && yarn build && pm2 reload ecosystem.config.js --env development',
+    },
     production: {
       user: '',
       host: '',
       ref: 'origin/master',
       repo: 'git@github.com:',
       path: '/',
-      'post-deploy': 'yarn && pm2 reload ecosystem.config.js --env production',
+      'post-deploy': 'yarn && yarn build && pm2 reload ecosystem.config.js --env production',
     },
   },
 }
