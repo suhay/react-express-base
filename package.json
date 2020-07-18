@@ -1,6 +1,6 @@
 {
   "name": "@suhay/react-express-base",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "src/index.js",
   "repository": "git@github.com:suhay/react-express-base.git",
   "author": "Matt Suhay <matthew.suhay@gmail.com>",
