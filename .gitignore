@@ -102,3 +102,5 @@ public/**/*.js
 
 # TernJS port file
 .tern-port
+
+public/
